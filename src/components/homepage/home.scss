@@ -1,0 +1,35 @@
+.imageButton {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #96d701;
+  border-color: #c3e6e0;
+
+}
+
+.homeTitle {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  color: white;
+  text-align: left;
+}
+
+.titleText {
+  font-family: Yellowtail;
+  font-size: 80px;
+  color: #ffcd00;
+}
+
+.subscribeForm {
+  justify-content: center;
+  align-items: center;
+}
+
+.mindMail {
+  font-size: medium;
+  text-align: left;
+}

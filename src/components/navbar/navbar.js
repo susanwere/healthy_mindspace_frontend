@@ -1,11 +1,11 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from 'react-bootstrap';
-import logo from '../logo.png';
+import logo from '../../logo.png';
 import './navbar.scss';
 
 function NavbarComponent() {
   return ( 
-    <Navbar collapseOnSelect bg="transparent" expand="lg" fixed="top" class='navbar'>
+    <Navbar collapseOnSelect bg="transparent" expand="lg" fixed="top" className='navbar'>
       <Navbar.Brand href="#home">
         <img
           src={logo}
