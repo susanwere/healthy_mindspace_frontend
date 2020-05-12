@@ -1,0 +1,21 @@
+#responsive-navbar-nav {
+  text-align: left;
+}
+
+.nav-link,
+.navbar-brand {
+  color: #c3e6e0 !important;
+}
+
+.dropdown-menu {
+  background-color: #dddcd7 !important;
+}
+
+.dropdown-item.active {
+  background-color: #96d701 !important;
+}
+
+.nav-link.active{
+  background-color: #c3e6e0 !important;
+  color: #28696d !important;
+}
