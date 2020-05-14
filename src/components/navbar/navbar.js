@@ -6,7 +6,7 @@ import './navbar.scss';
 function NavbarComponent() {
   return ( 
     <Navbar collapseOnSelect bg="transparent" expand="lg" fixed="top" className='navbar'>
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/">
         <img
           src={logo}
           width="110"
@@ -31,6 +31,7 @@ function NavbarComponent() {
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>
         </Form>
+        <Nav.Link href="/signup">Create an account</Nav.Link>
       </Navbar.Collapse>
     </Navbar>
   )
