@@ -7,6 +7,7 @@ import Login from './components/login/login';
 import Articles from './components/articles/articles';
 import ArticlesMain from './components/articles/articlesMain';
 import Quote1 from './components/quotes/quote1';
+import Footer from './components/footer/footer';
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,6 +32,7 @@ function App() {
             <Articles />
             <Quote1 />
             <ArticlesMain />
+            <Footer />
           </Route>
         </Switch>
       </header>
