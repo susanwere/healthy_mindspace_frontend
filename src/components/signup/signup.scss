@@ -37,6 +37,15 @@
 
 .signupButton {
   float: right;
+  background-color: #96d701;
+  border-color: #c3e6e0;
+}
+
+.signupButton:hover,
+.signupButton:active,
+.signupButton:focus {
+  background-color: #ff7d01 !important;
+  border-color: #c3e6e0;
 }
 
 .login {
