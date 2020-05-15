@@ -8,7 +8,7 @@ import './home.scss'
 
 export default function Home(){
   return (
-    <div>
+    <div className="homepage">
       <Container className="mt-4">
         <Row>
         <Col sm={6} className="homeTitle">

@@ -6,7 +6,15 @@
   -ms-transform: translate(-50%, -50%);
   background-color: #96d701;
   border-color: #c3e6e0;
+  outline: none;
+  box-shadow: none!important;
+}
 
+.imageButton:active,
+.imageButton:focus,
+.imageButton:hover {
+  background-color: #ff7d01 !important;
+  border-color: #c3e6e0 !important;
 }
 
 .homeTitle {
@@ -32,4 +40,8 @@
 .mindMail {
   font-size: medium;
   text-align: left;
+}
+
+.homepage {
+  padding-bottom: 210px;
 }
