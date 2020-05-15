@@ -1,0 +1,98 @@
+.footer {
+  width: 100%;
+  background-color: #28696d;
+  height: 50vh;
+
+  .imageCol {
+    img {
+      position: absolute;
+      width: 200px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+  }
+
+  .subscribeCol {
+    .subscribeForm {
+      position: absolute;
+      width: 330px;
+      top: 50%;
+      left: 56%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: left;
+    }
+  }
+
+  .contactCol {
+    .contactinfo {
+      position: absolute;
+      width: 330px;
+      font-size: 15px;
+      text-align: left;
+      top: 50%;
+      left: 56%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+  }
+
+  @media only screen and (min-width: 750px) and (max-width: 950px) {
+    .subscribeForm {
+      width: 260px !important;
+
+      button {
+        margin-top: 0.5rem !important;
+      }
+    }
+
+    .contactCol {
+      .contactinfo {
+        width: 260px;
+        font-size: 12px;
+      }
+    }
+
+
+  }
+
+  @media only screen and (max-width: 550px) {
+    .subscribeForm {
+
+      button {
+        margin-top: 0.5rem !important;
+      }
+    }
+  }
+
+  @media only screen and (min-width: 770px) {
+    .col-md-4 {
+      border-left: solid;
+      border-color: white;
+      height: 30vh;
+      margin-top: 40px;
+    }
+  }
+}
+
+.topFooter {
+  height: 40vh;
+}
+
+.bottomFooter {
+  height: 10vh;
+  background-color: #104b4e;
+  color: #fff;
+  position: relative;
+
+  .copyright {
+    position: absolute;
+    font-size: medium;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+}

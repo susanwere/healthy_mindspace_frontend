@@ -14,8 +14,8 @@ export default function Quote1 () {
         </Row>
         <Row>
           <Col sm={12} className="mt-4">
-            <p><b>The one who has a healthy mind has an easy breath.</b></p><br />
-            <h4>Lyza Sahertian</h4>
+            <p><b>It is health that is real wealth and not pieces of gold and silver.</b></p><br />
+            <h4>Mahatma Gandhi</h4>
           </Col>
         </Row>
       </Container>
