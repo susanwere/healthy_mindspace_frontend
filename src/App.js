@@ -13,6 +13,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Create from './components/create/create';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login />
+          </Route>
+          <Route path='/create'>
+            <Create />
           </Route>
           <Route path='/'>
             <Home />
