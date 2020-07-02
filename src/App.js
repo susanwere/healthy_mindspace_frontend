@@ -8,6 +8,7 @@ import Articles from './components/articles/articles';
 import ArticlesMain from './components/articles/articlesMain';
 import Quote1 from './components/quotes/quote1';
 import Footer from './components/footer/footer';
+import Read from './components/read/read';
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,6 +23,9 @@ function App() {
       <NavbarComponent />
       <header className="App-header">
         <Switch>
+          <Route path='/read'>
+            <Read />
+          </Route>
           <Route path='/signup'>
             <Signup />
           </Route>
