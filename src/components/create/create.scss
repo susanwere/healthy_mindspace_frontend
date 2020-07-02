@@ -6,11 +6,12 @@
   padding-top: 70px;
   margin-bottom: 20px;
   overflow-x: scroll;
+  padding-bottom: 200px;
 }
 
 .public-DraftEditorPlaceholder-root {
-  background-color: transparent;
-  color: white;
+  background-color: transparent !important;
+  color: white !important;
 }
 
 .inlineTooltip-button {
@@ -18,3 +19,7 @@
     vertical-align: unset;
   }
 }
+
+.graf--mixtapeEmbed {
+  color: white;
+} 

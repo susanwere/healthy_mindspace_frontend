@@ -22,7 +22,7 @@ export default function ArticlesMain(){
                   the card's content.
                 </Card.Text>
                 <footer className="articleFooter">
-                  <a href="#">Read More</a>
+                  <a href="/read">Read More</a>
                 </footer>
                 </Card.Body>
               </Card>
