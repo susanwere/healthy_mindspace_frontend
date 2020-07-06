@@ -42,19 +42,30 @@
 
 .morePosts {
   position: relative;
-  margin-top: 80px;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   background-color: #96d701;
   border-color: #c3e6e0;
   box-shadow: none !important;
 }
 
+.lessPosts {
+  position: relative;
+  top: 50%;
+  background-color: #96d701;
+  border-color: #c3e6e0;
+  box-shadow: none !important;
+}
+
+.hidden {
+  display: none;
+}
+
 .morePosts:hover,
 .morePosts:active,
-.morePosts:focus {
+.morePosts:focus,
+.lessPosts:hover,
+.lessPosts:active,
+.lessPosts:focus {
   background-color: #ff7d01 !important;
   border-color: #c3e6e0;
 }

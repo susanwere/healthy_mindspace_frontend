@@ -2,38 +2,73 @@ import React from 'react';
 import {Card, Container, Row, Col, Button} from 'react-bootstrap';
 import image from './../../images/3.jpg'
 import './articles.scss';
+import axios from 'axios';
 
-export default function ArticlesMain(){
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+export default class ArticlesMain extends React.Component {
 
-  return(
-    <div className="articles">
-      <Container>
-        <Row>
-          {numbers.map((number) => 
-            <Col sm={3}>
-              <div>
-              <Card className="mt-4">
-                <Card.Img variant="top" src={image} className="mainImage" />
-                <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up the bulk of
-                  the card's content.
-                </Card.Text>
-                <footer className="articleFooter">
-                  <a href="/read">Read More</a>
-                </footer>
-                </Card.Body>
-              </Card>
-              </div>
-          </Col>
-          )}
-        </Row>
-        <Row className="text-center">
-          <Button className="morePosts">More Posts</Button>
-        </Row>
-      </Container>
-    </div>
-  )
+  state = {
+    articles: [],
+    min: 0
+  }
+
+  componentDidMount(){
+    axios.get('https://healthy-mindspace-api.herokuapp.com/articles', 
+    {
+      headers: {
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.JC6qKuH9SG0SIiYSfhZUFTtirxN9Q47buLk0DPFFFzE'
+      }
+    })
+         .then(res => {
+           this.setState({ articles: res.data.articles })
+         })
+  }
+
+  morePosts = () => {
+    this.setState({min: this.state.min+8})
+  }
+
+  prevPosts = () => {
+    this.setState({min: this.state.min-8})
+    console.log(this.state.min)
+  }
+
+  render () {
+    const articles = this.state.articles;
+    const no_of_articles = this.state.articles.length - this.state.min;
+  
+    return(
+      <div className="articles">
+        <Container>
+          <Row>
+            {articles.slice(this.state.min, this.state.min + 8).map((article) => 
+              <Col sm={3} key={article.id}>
+                <div>
+                <Card className="mt-4">
+                  <Card.Img variant="top" src={image} className="mainImage" />
+                  <Card.Body>
+                  <Card.Title>{article.title}</Card.Title>
+                  <Card.Text>
+                    {article.body}
+                  </Card.Text>
+                  <footer className="articleFooter">
+                    <a href="/read">Read More</a>
+                  </footer>
+                  </Card.Body>
+                </Card>
+                </div>
+            </Col>
+            )}
+          </Row>
+          <Row className="text-center">
+            <Col sm={no_of_articles < 8 ? 12 : 6} className={this.state.min > 0 ? "" : "hidden"}>
+              <Button className="lessPosts" onClick={this.prevPosts}>Previous Articles</Button>
+            </Col>
+            <Col sm={this.state.min > 0 ? 6 : 12} className={no_of_articles < 8 ? "hidden" : ""}>
+            <Button className="morePosts" onClick={this.morePosts}>More Articles</Button>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+    )
+  }
 }
