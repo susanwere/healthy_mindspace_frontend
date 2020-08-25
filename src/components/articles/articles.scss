@@ -18,22 +18,41 @@
 .textCard {
   top: 100%;
   left: 50%;
+  min-height: 275px;
   width: 80%;
   transform: translate(-50%, -10%);
   -ms-transform: translate(-80%, -10%);
 }
 
+.mainArticleCard {
+  .card-body {
+    min-height: 250px;
+  }
+
+  .card-text {
+    max-height: 150px;
+  }
+}
+
 .card-title {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 400px;
 }
 
 .card-text {
   font-size: 14px;
+  max-height: 150px;
+  overflow-y: scroll;
 }
 
 .articleFooter {
-  font-size: 12px;
+  bottom: 17px;
   color: #ff7d01;
+  font-size: 12px;
+  float: bottom;
+  position: absolute;
+  text-align: center;
+  width: 80%;
 
   a {
     color: #ff7d01;
