@@ -4,6 +4,7 @@ import image from './../../images/1.jpg'
 import './articles.scss';
 import axios from 'axios';
 import Moment from 'react-moment';
+import EllipsisText from "react-ellipsis-text";
 
 export default class Articles extends React.Component {
 
@@ -30,19 +31,28 @@ export default class Articles extends React.Component {
         <Container>
           <Row>
             {articles.slice(Math.max(articles.length - 3, 0)).map((article) => 
-              <Col sm={4} key={article.id}>
+              <Col sm={6} md={4} key={article.id}>
                 <div>
                 <Card className="articleImage">
                   <Card.Img variant="top" src={image} />
                 </Card>
                 <Card className="textCard">
                 <Card.Body>
-                  <Card.Title>{article.title}</Card.Title>
+                  <Card.Title>
+                    <EllipsisText 
+                      text={article.title} 
+                      length={"25"} />
+                  </Card.Title>
                   <Card.Text>
-                    {article.body}
+                    <EllipsisText 
+                      text={article.body} 
+                      length={"220"} />
                   </Card.Text>
                   <footer className="articleFooter">
-            Someone Famous <cite title="Source Title"><Moment format="D MMM, YYYY">{article.created_at}</Moment></cite>
+                    {article.created_by} 
+                    <cite title="Source Title">
+                      <Moment format="D MMM, YYYY">{article.created_at}</Moment>
+                    </cite>
                   </footer>
                   </Card.Body>
                 </Card>

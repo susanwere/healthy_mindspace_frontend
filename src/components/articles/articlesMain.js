@@ -3,6 +3,7 @@ import {Card, Container, Row, Col, Button} from 'react-bootstrap';
 import image from './../../images/3.jpg'
 import './articles.scss';
 import axios from 'axios';
+import EllipsisText from "react-ellipsis-text";
 
 export default class ArticlesMain extends React.Component {
 
@@ -41,14 +42,20 @@ export default class ArticlesMain extends React.Component {
         <Container>
           <Row>
             {articles.slice(this.state.min, this.state.min + 8).map((article) => 
-              <Col sm={3} key={article.id}>
+              <Col sm={4} md={3} key={article.id}>
                 <div>
-                <Card className="mt-4">
+                <Card className="mt-4 mainArticleCard">
                   <Card.Img variant="top" src={image} className="mainImage" />
                   <Card.Body>
-                  <Card.Title>{article.title}</Card.Title>
+                  <Card.Title>
+                    <EllipsisText 
+                      text={article.title} 
+                      length={"20"} />
+                  </Card.Title>
                   <Card.Text>
-                    {article.body}
+                    <EllipsisText 
+                      text={article.body} 
+                      length={"200"} />
                   </Card.Text>
                   <footer className="articleFooter">
                     <a href="/read">Read More</a>
