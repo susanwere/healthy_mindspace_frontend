@@ -30,7 +30,6 @@ export default class ArticlesMain extends React.Component {
 
   prevPosts = () => {
     this.setState({min: this.state.min-8})
-    console.log(this.state.min)
   }
 
   render () {
