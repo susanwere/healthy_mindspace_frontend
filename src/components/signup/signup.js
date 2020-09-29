@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Form, Button, Container, Row, Col} from 'react-bootstrap';
-import './signup.scss'
+import './signup.scss';
+import instance from '../../axios';
 
-export default function Signup(){
+export default function Signup(props){
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [errors, setErrors] = useState({})
+
+  const handleSubmit = () => {    
+    instance.post('/users', {username: username, email: email, password: password})
+          .then(res => {
+            setErrors({})
+            localStorage.setItem('token', res.data.token)
+            window.location.href = "/";
+          })
+          .catch(err => {
+            if(err.response.status == 422){
+              setErrors(err.response.data.error)
+            }
+          })
+  }
+
   return(
     <Container className="signupContainer">
       <Row>
@@ -17,16 +37,28 @@ export default function Signup(){
               Username
             </Form.Label>
             <Col sm="8" md="10">
-              <Form.Control type="text" placeholder="Username" />
+              <Form.Control 
+                type="text" 
+                placeholder="Username" 
+                value={username}
+                onChange={e => setUsername(e.target.value)}
+                className={errors.username ? "error" : ""} />
+                {errors.username ? <p className="errorMessage">Username {errors.username[0]}</p> : ""}
             </Col>
-          </Form.Group>
+          </Form.Group> 
 
           <Form.Group as={Row} controlId="formPlaintextEmail">
             <Form.Label column sm="4" md="2">
               Email
             </Form.Label>
             <Col sm="8" md="10">
-              <Form.Control type="email" placeholder="name@example.com" />
+              <Form.Control 
+                type="email" 
+                placeholder="name@example.com" 
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                className={errors.email ? "error" : ""} />
+                {errors.email ? <p className="errorMessage">Email {errors.email[0]}</p> : ""}
             </Col>
           </Form.Group>
 
@@ -35,16 +67,13 @@ export default function Signup(){
               Password
             </Form.Label>
             <Col sm="8" md="10">
-              <Form.Control type="password" placeholder="Password" />
-            </Col>
-          </Form.Group>
-
-          <Form.Group as={Row} controlId="formPlaintextPassword">
-            <Form.Label column sm="4" md="2">
-              Confirm Password
-            </Form.Label>
-            <Col sm="8" md="10">
-              <Form.Control type="password" placeholder="Confirm Password" />
+              <Form.Control 
+                type="password" 
+                placeholder="Password" 
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                className={errors.password ? "error" : ""} />
+                {errors.password ? <p className="errorMessage">Password {errors.password[0]}</p> : ""}
             </Col>
           </Form.Group>
 
@@ -52,13 +81,13 @@ export default function Signup(){
             <Col sm="6" className="text-center">
             </Col>
             <Col sm="6">
-              <Button type="submit" className="signupButton" variant="primary" href="/">
+              <Button type="button" className="signupButton" variant="primary" onClick={handleSubmit}>
                 Sign Up
               </Button>
             </Col>
           </Row>
         </Form>
-        <p className="login" column sm="6">Already have an account? <a href='/login'>Login Here</a></p>
+        <p className="login">Already have an account? <a href='/login'>Login Here</a></p>
         </Col>
       </Row>
     </Container>
