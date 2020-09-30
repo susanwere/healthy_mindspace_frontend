@@ -17,8 +17,10 @@ export default function Signup(props){
             window.location.href = "/";
           })
           .catch(err => {
-            if(err.response.status == 422){
-              setErrors(err.response.data.error)
+            if(err.response){
+              if(err.response.status == 422){
+                setErrors(err.response.data.error)
+              }
             }
           })
   }

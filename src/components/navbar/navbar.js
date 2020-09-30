@@ -45,7 +45,7 @@ class NavbarComponent extends React.Component {
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
           </Form>
-          <Nav.Link href="/signup" className="signupLink">Create an account</Nav.Link>
+          {localStorage.getItem('token') ? "" : <Nav.Link href="/signup" className="signupLink">Create an account</Nav.Link>}
         </Navbar.Collapse>
       </Navbar>
     )
