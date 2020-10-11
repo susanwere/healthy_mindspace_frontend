@@ -4,10 +4,6 @@ import NavbarComponent from './components/navbar/navbar';
 import Home from './components/homepage/home';
 import Signup from './components/signup/signup';
 import Login from './components/login/login';
-import Articles from './components/articles/articles';
-import ArticlesMain from './components/articles/articlesMain';
-import Quote1 from './components/quotes/quote1';
-import Footer from './components/footer/footer';
 import Read from './components/read/read';
 import {
   BrowserRouter as Router,
@@ -37,10 +33,6 @@ function App() {
           </Route>
           <Route path='/'>
             <Home />
-            <Articles />
-            <Quote1 />
-            <ArticlesMain />
-            <Footer />
           </Route>
         </Switch>
       </header>
