@@ -42,6 +42,9 @@ class NavbarComponent extends React.Component {
             </NavDropdown>
           </Nav>
           <Form inline>
+            <Nav className="ml-auto mr-3">
+              <Nav.Link href="/create">Create An Article</Nav.Link>
+            </Nav>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
           </Form>

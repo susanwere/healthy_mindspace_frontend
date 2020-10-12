@@ -8,9 +8,6 @@ export default function Read (){
   return (
     <Container>
       <Row className="text-left pt-4">
-        <Col sm={12}>
-          <h1>Article Title</h1>
-        </Col>
         <Col sm={12} className="read-body">
           <DanteEditor
             read_only={true}
